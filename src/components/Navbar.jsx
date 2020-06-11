@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 
+// add our darkmode hook
+import {useDarkMode} from "../hooks/UseDarkMode";
+
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  // use our darkmode hook to snage the bachground
+  const [darkMode, setDarkMode] = useDarkMode('dark', true);
   const toggleMode = e => {
     e.preventDefault();
     setDarkMode(!darkMode);
